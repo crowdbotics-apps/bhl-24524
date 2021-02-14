@@ -1,0 +1,68 @@
+import React, {Component} from 'react';
+import {
+  View,
+  Text,
+  StatusBar,
+  StyleSheet,
+  Image,
+  Dimensions,
+} from 'react-native';
+import Swiper from 'react-native-swiper';
+
+const {width, height} = Dimensions.get('window');
+
+export default class Onboarding extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  render() {
+    return (
+      <View style={styles.container}>
+        <StatusBar hidden={true} />
+        <Swiper showsButtons={true}>
+          <View>
+            <Image
+              source={require('../assets/images/GroupPicture.jpg')}
+              style={styles.image}
+            />
+          </View>
+          <View>
+            <Image
+              source={require('../assets/images/ChoatePondFacingKessel.jpg')}
+              style={styles.image}
+            />
+          </View>
+          <View>
+            <Image
+              source={require('../assets/images/AdafromSkyPOV.jpg')}
+              style={styles.image}
+            />
+          </View>
+          <View>
+            <Image
+              source={require('../assets/images/Adaonpond.jpg')}
+              style={styles.image}
+            />
+          </View>
+        </Swiper>
+      </View>
+    );
+  }
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  slide: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  image: {
+    width: width,
+    height: height,
+  },
+});
