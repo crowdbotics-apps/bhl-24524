@@ -6,7 +6,7 @@ export function DrawerContent(props) {
     <View style={styles.drawer}>
       <Image
         style={styles.image}
-        source={require('/Users/zachd/BlueHomeLab/src/images/BlueCoLablogo.jpeg')}
+        source={require('')}
       />
       <TouchableOpacity
         style={styles.links}
