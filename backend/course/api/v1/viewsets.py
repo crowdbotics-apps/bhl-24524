@@ -1,29 +1,19 @@
 from rest_framework import authentication
 from course.models import (
-    Recording,
-    Event,
-    Subscription,
-    Course,
-    Group,
+    Lesson,
     Module,
     PaymentMethod,
+    Recording,
+    Subscription,
     SubscriptionType,
-    Enrollment,
-    Lesson,
-    Category,
 )
 from .serializers import (
-    RecordingSerializer,
-    EventSerializer,
-    SubscriptionSerializer,
-    CourseSerializer,
-    GroupSerializer,
+    LessonSerializer,
     ModuleSerializer,
     PaymentMethodSerializer,
+    RecordingSerializer,
+    SubscriptionSerializer,
     SubscriptionTypeSerializer,
-    EnrollmentSerializer,
-    LessonSerializer,
-    CategorySerializer,
 )
 from rest_framework import viewsets
 
@@ -37,24 +27,6 @@ class PaymentMethodViewSet(viewsets.ModelViewSet):
     queryset = PaymentMethod.objects.all()
 
 
-class GroupViewSet(viewsets.ModelViewSet):
-    serializer_class = GroupSerializer
-    authentication_classes = (
-        authentication.SessionAuthentication,
-        authentication.TokenAuthentication,
-    )
-    queryset = Group.objects.all()
-
-
-class CategoryViewSet(viewsets.ModelViewSet):
-    serializer_class = CategorySerializer
-    authentication_classes = (
-        authentication.SessionAuthentication,
-        authentication.TokenAuthentication,
-    )
-    queryset = Category.objects.all()
-
-
 class RecordingViewSet(viewsets.ModelViewSet):
     serializer_class = RecordingSerializer
     authentication_classes = (
@@ -64,15 +36,6 @@ class RecordingViewSet(viewsets.ModelViewSet):
     queryset = Recording.objects.all()
 
 
-class EventViewSet(viewsets.ModelViewSet):
-    serializer_class = EventSerializer
-    authentication_classes = (
-        authentication.SessionAuthentication,
-        authentication.TokenAuthentication,
-    )
-    queryset = Event.objects.all()
-
-
 class SubscriptionTypeViewSet(viewsets.ModelViewSet):
     serializer_class = SubscriptionTypeSerializer
     authentication_classes = (
@@ -80,24 +43,6 @@ class SubscriptionTypeViewSet(viewsets.ModelViewSet):
         authentication.TokenAuthentication,
     )
     queryset = SubscriptionType.objects.all()
-
-
-class EnrollmentViewSet(viewsets.ModelViewSet):
-    serializer_class = EnrollmentSerializer
-    authentication_classes = (
-        authentication.SessionAuthentication,
-        authentication.TokenAuthentication,
-    )
-    queryset = Enrollment.objects.all()
-
-
-class CourseViewSet(viewsets.ModelViewSet):
-    serializer_class = CourseSerializer
-    authentication_classes = (
-        authentication.SessionAuthentication,
-        authentication.TokenAuthentication,
-    )
-    queryset = Course.objects.all()
 
 
 class LessonViewSet(viewsets.ModelViewSet):

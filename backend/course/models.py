@@ -15,27 +15,8 @@ class PaymentMethod(models.Model):
     )
 
 
-class Group(models.Model):
-    "Generated Model"
-    name = models.CharField(
-        max_length=256,
-    )
-
-
-class Category(models.Model):
-    "Generated Model"
-    name = models.CharField(
-        max_length=256,
-    )
-
-
 class Recording(models.Model):
     "Generated Model"
-    event = models.ForeignKey(
-        "course.Event",
-        on_delete=models.CASCADE,
-        related_name="recording_event",
-    )
     media = models.URLField()
     user = models.ForeignKey(
         "users.User",
@@ -45,60 +26,10 @@ class Recording(models.Model):
     published = models.DateTimeField()
 
 
-class Event(models.Model):
-    "Generated Model"
-    name = models.CharField(
-        max_length=256,
-    )
-    user = models.ForeignKey(
-        "users.User",
-        on_delete=models.CASCADE,
-        related_name="event_user",
-    )
-    date = models.DateTimeField()
-
-
 class SubscriptionType(models.Model):
     "Generated Model"
     name = models.CharField(
         max_length=256,
-    )
-
-
-class Enrollment(models.Model):
-    "Generated Model"
-    user = models.ForeignKey(
-        "users.User",
-        on_delete=models.CASCADE,
-        related_name="enrollment_user",
-    )
-    course = models.ForeignKey(
-        "course.Course",
-        on_delete=models.CASCADE,
-        related_name="enrollment_course",
-    )
-
-
-class Course(models.Model):
-    "Generated Model"
-    author = models.ForeignKey(
-        "users.User",
-        on_delete=models.CASCADE,
-        related_name="course_author",
-    )
-    title = models.CharField(
-        null=True,
-        blank=True,
-        max_length=256,
-    )
-    description = models.TextField(
-        null=True,
-        blank=True,
-    )
-    categories = models.ManyToManyField(
-        "course.Category",
-        blank=True,
-        related_name="course_categories",
     )
 
 
@@ -118,11 +49,6 @@ class Lesson(models.Model):
 
 class Module(models.Model):
     "Generated Model"
-    course = models.ForeignKey(
-        "course.Course",
-        on_delete=models.CASCADE,
-        related_name="module_course",
-    )
     title = models.CharField(
         max_length=256,
     )

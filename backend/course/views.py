@@ -1,15 +1,10 @@
 from .models import (
-    Recording,
-    Event,
-    Subscription,
-    Course,
-    Group,
-    Module,
     PaymentMethod,
-    SubscriptionType,
-    Enrollment,
+    Subscription,
     Lesson,
-    Category,
+    SubscriptionType,
+    Recording,
+    Module,
 )
 from django.views.generic import CreateView, UpdateView, DetailView, ListView
 from django.shortcuts import render
