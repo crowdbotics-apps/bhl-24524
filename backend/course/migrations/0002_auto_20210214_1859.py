@@ -6,52 +6,52 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('users', '0003_remove_user_group'),
-        ('course', '0001_initial'),
+        ("users", "0003_remove_user_group"),
+        ("course", "0001_initial"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='course',
-            name='author',
+            model_name="course",
+            name="author",
         ),
         migrations.RemoveField(
-            model_name='course',
-            name='categories',
+            model_name="course",
+            name="categories",
         ),
         migrations.RemoveField(
-            model_name='enrollment',
-            name='course',
+            model_name="enrollment",
+            name="course",
         ),
         migrations.RemoveField(
-            model_name='enrollment',
-            name='user',
+            model_name="enrollment",
+            name="user",
         ),
         migrations.RemoveField(
-            model_name='event',
-            name='user',
+            model_name="event",
+            name="user",
         ),
         migrations.DeleteModel(
-            name='Group',
+            name="Group",
         ),
         migrations.RemoveField(
-            model_name='module',
-            name='course',
+            model_name="module",
+            name="course",
         ),
         migrations.RemoveField(
-            model_name='recording',
-            name='event',
+            model_name="recording",
+            name="event",
         ),
         migrations.DeleteModel(
-            name='Category',
+            name="Category",
         ),
         migrations.DeleteModel(
-            name='Course',
+            name="Course",
         ),
         migrations.DeleteModel(
-            name='Enrollment',
+            name="Enrollment",
         ),
         migrations.DeleteModel(
-            name='Event',
+            name="Event",
         ),
     ]
